@@ -1,19 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ItemList } from './components/containers/ItemListContainer';
 
 function App() {
 
-  const objStyle= {backgroundColor: 'lightblue'}
+  
   return (
-    <div className="App" style={objStyle}  >
+    <div className="App"   >
         <NavBar />
         
         
-        
+        <ItemList greeting= "LISTADO DE PRODUCTOS" />
         
     </div>
+     
   );
 }
 
