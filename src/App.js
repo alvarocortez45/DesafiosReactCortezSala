@@ -1,8 +1,10 @@
-import './App.css';
-import NavBar from './components/NavBar';
-
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ItemList } from './components/containers/ItemListContainer';
+import NavBar from "./components/NavBar";
+import { ItemDetailContainer } from "../src/components/containers/ItemDetailContainer/ItemDetailContainer";
+import { ItemListContainer } from "./components/containers/ItemListContainer/ItemListContainers";
+
+
 
 function App() {
 
@@ -12,8 +14,8 @@ function App() {
         <NavBar />
         
         
-        <ItemList greeting= "LISTADO DE PRODUCTOS" />
-        
+        <ItemListContainer />
+        <ItemDetailContainer />
     </div>
      
   );

@@ -3,22 +3,22 @@ import "./style.css"
 import { CartWidget } from './CartWidget'
 
 function NavBar() {
-    const objStyle= {backgroundColor: 'lightblue'}
+    const objStyle= {backgroundColor: 'grey'}
     return (
         <div>
                     <div className="container-fluid" style={objStyle}>
-                        <h1>TODO TENIS</h1>
                         
+                        <img className="imgLogo" src="./assets/img/TODO TENIS.png" alt="todoTENIS" />
                 
                         <ul className="nav justify-content-center">
                             <li className="nav-item">
-                                <a className="nav-link " aria-current="page" href="www.google.com">Raquetas</a>
+                                <a className="nav-link " aria-current="page" href="www.google.com">Tienda</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="www.google.com">Indumentaria</a>
+                                <a className="nav-link" href="www.google.com">Nosotros</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="www.google.com">Accesorios</a>
+                                <a className="nav-link" href="www.google.com">Contacto</a>
                             </li>
                             <li className="nav-item justify-content-right">
                                 <a className= "cartLogo" href="www.google.com"><CartWidget/></a>

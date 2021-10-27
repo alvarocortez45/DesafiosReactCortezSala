@@ -2,3 +2,68 @@
     width: 3rem;
     height: 2rem;
 }
+
+.imgLogo{
+    height: 15rem;
+}
+
+.divStock {
+    margin: 40px;
+}
+
+.divCatalogo{
+    margin: 5rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font: 62, 5%;
+}
+
+
+.contain-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contain-cards img{
+    width: 10rem;
+    height: 15rem;
+}
+
+.cards {
+    border: 1px solid black;
+    border-radius: 5%;
+    width: 20%;
+    margin: 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-card {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contain-cartDetail {
+    border: 1px solid black;
+    margin: 2rem 10rem;
+    padding: 2rem 0;
+}
+
+.contain-cartDetail img {
+    width: 15rem;
+    height: 25rem;
+}
