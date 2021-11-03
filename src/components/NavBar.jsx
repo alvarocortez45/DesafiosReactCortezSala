@@ -1,33 +1,56 @@
-import React from 'react'
-import "./style.css"
-import { CartWidget } from './CartWidget'
+import React from "react";
+import { Link } from "react-router-dom";
+import { CartIconLogo } from "./CartWidget";
+import logo from "../components/img/TODO TENIS.png";
 
-function NavBar() {
-    const objStyle= {backgroundColor: 'grey'}
+export const NavBar = () => {
     return (
-        <div>
-                    <div className="container-fluid" style={objStyle}>
-                        
-                        <img className="imgLogo" src="./assets/img/TODO TENIS.png" alt="todoTENIS" />
-                
-                        <ul className="nav justify-content-center">
-                            <li className="nav-item">
-                                <a className="nav-link " aria-current="page" href="www.google.com">Tienda</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="www.google.com">Nosotros</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="www.google.com">Contacto</a>
-                            </li>
-                            <li className="nav-item justify-content-right">
-                                <a className= "cartLogo" href="www.google.com"><CartWidget/></a>
-                            </li>
-                        </ul>
-                        
-                    </div>   
-        </div>   
-    )
-}
+        <div className="NavBar">
+            <div className="NavBar-div">
+                <img className="logo" src={logo} alt="logo" />
+            </div>
+            <nav className="navegacion">
+                <ul className="menu">
+                    <li>
+                        {" "}
+                        <Link to="/">Home</Link>{" "}
+                    </li>
 
-export default NavBar
+                    <li>
+                        {" "}
+                        <Link to="/productos">Productos</Link>{" "}
+                        <ul className="submenu">
+                            
+                            <li>
+                                <Link to="/productos/raquetas">
+                                    {" "}
+                                    Raquetas
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/productos/accesorios">
+                                    {" "}
+                                    Accesorios
+                                </Link>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <Link to="/contacto">Contacto</Link>
+                    </li>
+
+                    <li>
+                        <Link
+                            to="/cart"
+                            className="Link cartLogo"
+                            href="https://google.com"
+                        >
+                            <CartIconLogo />
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    );
+};

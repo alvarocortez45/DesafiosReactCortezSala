@@ -1,5 +1,5 @@
 import Logo from "../components/img/cartIcon.png"
 
-export function CartWidget () {
+export function CartIconLogo () {
     return <img src= {Logo} alt= "Carrito" />
 }

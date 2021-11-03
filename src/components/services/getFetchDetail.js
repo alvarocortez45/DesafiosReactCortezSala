@@ -1,11 +1,12 @@
-const products = [
+const productsDetail = [
     {
         id: 1,
         title: "Raqueta Prince Beast 100",
         stock: 10,
         photo: "https://img.tenniswarehouse-europe.com/watermark/rs.php?path=PO3B10-1.jpg&nw=296",
         price: 25000,
-        categoria: "raquetas"
+        categoria: "raquetas",
+        descrip: "Descripción..."
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ const products = [
         stock: 10,
         photo: "https://img.tennis-warehouse.com/watermark/rs.php?path=16BV8R-1.jpg&nw=296",
         price: 22000,
-        categoria: "raquetas"
+        categoria: "raquetas",
+        descrip: "Descripción..."
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ const products = [
         stock: 10,
         photo: "https://img.tennis-warehouse.com/watermark/rs.php?path=HRRMP-1.jpg&nw=296",
         price: 27000,
-        categoria: "raquetas"
+        categoria: "raquetas",
+        descrip: "Descripción..."
     },
 
     {
@@ -30,15 +33,14 @@ const products = [
         stock: 40,
         photo: "https://img.tenniswarehouse-europe.com/watermark/rs.php?path=HP3BCN-1.jpg&nw=210",
         price: 1200,
-        categoria: "accesorios"
+        categoria: "accesorios",
+        descrip:"Descripción"
     },
-
     
 ];
 
-export const getFetch = new Promise((resolve, reject) => {
+export const getFetchDetail = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve(products);
+        resolve(productsDetail);
     }, 2000);
 });
-
