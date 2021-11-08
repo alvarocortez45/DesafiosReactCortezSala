@@ -7,7 +7,10 @@ export const NavBar = () => {
     return (
         <div className="NavBar">
             <div className="NavBar-div">
-                <img className="logo" src={logo} alt="logo" />
+                <Link to="/">
+                    {" "}
+                    <img className="logo" src={logo} alt="logo" />{" "}
+                </Link>
             </div>
             <nav className="navegacion">
                 <ul className="menu">

@@ -12,31 +12,31 @@ function App() {
   return (
       <Router>
           <Switch>
+              <Route exact path="/">
+                  <NavBar />
+              </Route>
               <Route exact path="/productos">
-                  <NavBar />
-                  <ItemListContainer />
-              </Route>
-              <Route exact path="/productos/:id">
-                  <NavBar />
-                  <ItemListContainer />
-              </Route>
-              <Route exact path="/producto/:prodId">
-                  <NavBar />
-                  <ItemDetailContainer />
-              </Route>
-              <Route exact path="/Contacto">
-                  <NavBar />
-                  <Contacto />
-              </Route>
-              <Route>
-                  <NavBar />
-                  <Cart />
-              </Route>
-          </Switch>
-      </Router>
-  );
+                    <ItemListContainer />
+                </Route>
+
+                <Route exact path="/productos/:id">
+                    <ItemListContainer />
+                </Route>
+
+                <Route exact path="/producto/:prodId">
+                    <ItemDetailContainer />
+                </Route>
+
+                <Route exact path="/contacto">
+                    <Contacto />
+                </Route>
+
+                <Route exact path="/cart">
+                    <Cart />
+                </Route>
+            </Switch>
+        </Router>
+    );
 }
-
-
 
 export default App;
