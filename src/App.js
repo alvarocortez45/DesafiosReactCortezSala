@@ -7,9 +7,11 @@ import { ItemDetailContainer } from "../src/components/containers/ItemDetailCont
 import { ItemListContainer } from "./components/containers/ItemListContainer/ItemListContainers";
 import {Contacto} from "./components/Contacto";
 import {Cart} from "./components/Cart";
+import CartContextProvider from "./components/Context/CartContext";
 
 function App() {
   return (
+    <CartContextProvider>
       <Router>
           <Switch>
               <Route exact path="/">
@@ -36,7 +38,8 @@ function App() {
                 </Route>
             </Switch>
         </Router>
-    );
+    </CartContextProvider>
+  );
 }
 
 export default App;
