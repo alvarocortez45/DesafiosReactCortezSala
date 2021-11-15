@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
+
 export function ItemCount({ stock, initial, addToCart }) {
     let [count, setCount] = useState(initial);
 
@@ -35,6 +37,10 @@ export function ItemCount({ stock, initial, addToCart }) {
             >
                 AÑADIR AL CARRITO
             </button>
+            <Link to="/productos">
+                <button className="button-card-detail">VOLVER</button>
+            </Link>
+
             {}
         </div>
     );

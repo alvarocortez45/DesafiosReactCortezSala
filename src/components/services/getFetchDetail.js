@@ -1,4 +1,4 @@
-const productsDetail = [
+/** const productsDetail = [
     {
         id: 1,
         title: "Raqueta Prince Beast 100",
@@ -43,4 +43,4 @@ export const getFetchDetail = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(productsDetail);
     }, 2000);
-});
+}); **/
