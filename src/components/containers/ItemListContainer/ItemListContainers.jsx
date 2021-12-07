@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { getFetch } from "../../services/getFetch.js";
 import { ItemList } from "../../ItemList/ItemList";
 import { Loader } from "../../Loader.jsx";
 import { NavBar } from "../../NavBar.jsx";
@@ -17,12 +16,12 @@ export function ItemListContainer() {
         const dataBase = getFirestore();
 
         if (id) {
-            const dataBaseQuery = dataBase
+            const dataBaseCategory = dataBase
                 .collection("items")
                 .where("category", "==", id)
                 .get();
 
-            dataBaseQuery
+            dataBaseCategory
                 .then((response) =>
                     setProduct(
                         response.docs.map((item) => ({

@@ -8,6 +8,7 @@ import { ItemListContainer } from "./components/containers/ItemListContainer/Ite
 import {Contacto} from "./components/Contacto";
 import {Cart} from "./components/Cart";
 import CartContextProvider from "./components/Context/CartContext";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Router>
           <Switch>
               <Route exact path="/">
-                  <NavBar />
+                  <Home />
               </Route>
               <Route exact path="/productos">
                     <ItemListContainer />

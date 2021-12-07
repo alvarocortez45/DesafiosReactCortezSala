@@ -6,15 +6,14 @@ import { ItemCount } from "../containers/ItemListContainer/ItemCount";
 
 export const ItemDetail = ({ detail, AddedToCart }) => {
     const [quantity, setQuantity] = useState(0);
+
     const [purchaseQuantity, setPurchasequantity] = useState(false);
+
     const { addToCartList } = useCartContext();
 
     const addToCart = (quantityAdded) => {
-        console.log(
-            { detail, quantity: quantityAdded },
-            " item y Cantidad desde itemDetail"
-        );
         setQuantity(quantityAdded);
+
         addToCartList({ detail, quantity: quantityAdded });
         setPurchasequantity(true);
     };
@@ -39,11 +38,11 @@ export const ItemDetail = ({ detail, AddedToCart }) => {
                                 {" "}
                                 <button className="button-card-AddToCart-detail">
                                     {" "}
-                                    FINALIZAR{" "}
+                                    Finalizar compra{" "}
                                 </button>{" "}
                             </Link>
                             <Link to="/">
-                                <button className="button-card">INICIO</button>
+                                <button className="button-card">Inicio</button>
                             </Link>
                         </div>
                     ) : (

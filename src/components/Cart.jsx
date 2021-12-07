@@ -1,21 +1,54 @@
 import React from "react";
+import { useState } from "react";
 import { useCartContext } from "./Context/CartContext";
 import { Link } from "react-router-dom";
 import { NavBar } from "./NavBar";
+import { getFirestore } from "./services/getFirestore";
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 export const Cart = () => {
+    const [orderId, setOrderId] = useState("");
+    const [userForm, setUserForm] = useState({
+        name: "",
+        surname: "",
+        phone: "",
+        email: "",
+    });
     const { cartList, removeItem, clearCart, totalPrice } = useCartContext();
-    // destructuring de las funciones cartList, removeItem, clearCart del context
+    const createOrder = (e) => {
+        e.preventDefault();
 
-    console.log(cartList, "cartList desde cart");
-
+        let order = {};
+        order.date = firebase.firestore.Timestamp.fromDate(new Date());
+        order.buyer = userForm;
+        order.total = totalPrice;
+        order.items = cartList.map((itemAdded) => {
+            const id = itemAdded.detail.id;
+            const title = itemAdded.detail.title;
+            const subtotal = itemAdded.detail.price * itemAdded.quantity;
+            return { id, title, subtotal };
+        });
+        const dataBase = getFirestore();
+        dataBase
+            .collection("orders")
+            .add(order)
+            .then((response) => setOrderId(response.id))
+            .catch((error) => alert("Error:", error))
+            .finally(() => clearCart());
+    };
+    const handleChange = (e) => {
+        setUserForm({
+            ...userForm,
+            [e.target.name]: e.target.value,
+        });
+    };
     return (
         <div>
             <NavBar />
-            <p className="App title-carrito">Carrito de compras</p>
-
+            <p className="App title-carrito">CARRITO</p>
             {cartList.length ? (
-                <>
+                <div className="center">
                     <div className="table">
                         <table className="table-header">
                             <thead>
@@ -33,7 +66,7 @@ export const Cart = () => {
                                         scope="row"
                                         className="table-th th-color"
                                     >
-                                        Precio(u)
+                                        Precio unitario
                                     </th>
 
                                     <th className="table-th App th-color">-</th>
@@ -89,15 +122,11 @@ export const Cart = () => {
                                     <th className="table-th">
                                         <Link to="/productos">
                                             <button className="button-card">
-                                                CONTINUAR COMPRANDO
+                                                Seguir comprando
                                             </button>
                                         </Link>
                                     </th>
-                                    <th scope="row" className="table-th">
-                                        <button className="button-card">
-                                            Check out
-                                        </button>
-                                    </th>
+
                                     <th className="table-th">
                                         Total: ${totalPrice}
                                     </th>
@@ -105,14 +134,73 @@ export const Cart = () => {
                             </tfoot>
                         </table>
                     </div>
-                </>
+                    <div className="form">
+                        <form onSubmit={createOrder} onChange={handleChange}>
+                            <legend className="form-legend">
+                                Ingresá tus datos
+                            </legend>
+                            <div>
+                                <label htmlFor="name" className="form-label">
+                                    Nombre
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Nombre"
+                                    defaultValue={userForm.name}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="surname" className="form-label">
+                                    Apellido
+                                </label>
+                                <input
+                                    type="text"
+                                    name="surname"
+                                    placeholder="Apellido"
+                                    defaultValue={userForm.surname}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="phone" className="form-label">
+                                    Teléfono
+                                </label>
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    placeholder="321456789"
+                                    defaultValue={userForm.phone}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="email" className="form-label">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="ejemplo@tuemail.com"
+                                    defaultValue={userForm.email}
+                                    required
+                                />
+                            </div>
+                            <button className="buy-buttom">¡Comprar!</button>
+                        </form>
+                    </div>
+                </div>
             ) : (
                 <div className="App">
-                    <p className="Cart-empty">El carrito está vacío</p>
+                    <p className="Cart-empty">
+                        {" "}
+                        tu numero de pedido es : {orderId}
+                    </p>
                     <Link to="/productos">
                         {" "}
                         <button className="button-card-AddToCart-detail">
-                            Encontrá aca lo que buscas!
+                            Seguir comprando
                         </button>{" "}
                     </Link>
                 </div>

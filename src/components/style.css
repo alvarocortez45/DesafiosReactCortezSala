@@ -182,3 +182,143 @@ h1 {
 .cart{
     margin: 5rem;
 }
+
+.buy-buttom {
+    width: 7rem;
+    height: 2rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 15rem;
+    border: 1px solid black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+label {
+    padding-left: 1rem;
+    text-align: center;
+}
+
+input {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.contain-cartDetail {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50rem;
+    height: 30rem;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.52);
+}
+
+
+.contain-img-detail img {
+    width: 15rem;
+    height: 20rem;
+}
+
+.div-detail1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40rem;
+    height: 40rem;
+}
+
+.div-detail2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+    height: 30rem;
+}
+
+.button-card-detail {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5%;
+    width: 3rem;
+    height: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.button-card-AddToCart-detail {
+    background-color: black;
+    color: white;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 5%;
+    width: 7rem;
+    height: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.container-contact {
+    position: relative;
+    width: 100%;
+    height: 40rem;
+    z-index: 10;
+    background-position: center;
+    background-size: cover;
+}
+
+.contact-content {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 15%;
+    left: 15%;
+    width: 30rem;
+    height: 20rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #ddd;
+    border: 3px solid black;
+    border-radius: 5%;
+    font-size: 2rem;
+}
+
+.mainTitle{
+    display: block;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+}

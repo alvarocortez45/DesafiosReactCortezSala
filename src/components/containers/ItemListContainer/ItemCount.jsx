@@ -18,30 +18,34 @@ export function ItemCount({ stock, initial, addToCart }) {
 
     return (
         <div className="centrar">
-            <h4> STOCK: {stock} </h4>
-            <h3> CANTIDAD: {count} </h3>
-            <button onClick={increaseQty} disabled={count === stock}>
+            <h4 className="white">Stock: {stock} </h4>
+            <h4 className="white">
+                Cantidad de productos a seleccionar : {count}{" "}
+            </h4>
+            <button
+                onClick={increaseQty}
+                disabled={count === stock}
+                className="button-card-detail"
+            >
                 +
             </button>
-            <button onClick={decreaseQty} disabled={count < 1}>
+            <button
+                onClick={decreaseQty}
+                disabled={count < 1}
+                className="button-card-detail"
+            >
                 -
             </button>
             <button
-                onClick={() =>
-                    addToCartHandler(
-                        console.log(
-                            "capturo la cantidad en ItemCount y la llevo para mostrarla en itemDetail"
-                        )
-                    )
-                }
+                onClick={() => addToCartHandler()}
+                className="button-card-AddToCart-detail"
             >
-                AÑADIR AL CARRITO
+                Agregar al carrito
             </button>
-            <Link to="/productos">
-                <button className="button-card-detail">VOLVER</button>
-            </Link>
 
-            {}
+            <Link to="/productos">
+                <button className="button-card-detail">Volver</button>
+            </Link>
         </div>
     );
 }
